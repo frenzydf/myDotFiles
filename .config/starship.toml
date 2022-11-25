@@ -74,6 +74,13 @@ disabled = true
 format = 'via [⛯ $context\($namespace\)](bold purple) '
 disabled = false
 
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+#detect_folders = []
+#detect_extensions = ["yaml"]
+
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true

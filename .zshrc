@@ -92,9 +92,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 configure_prompt() {
-    prompt_symbol=💀
+    prompt_symbol=㉿
     # Skull emoji for root terminal
-    [ "$EUID" -eq 0 ] && prompt_symbol=💀
+    #[ "$EUID" -eq 0 ] && prompt_symbol=💀
     case "$PROMPT_ALTERNATIVE" in
         twoline)
             PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
@@ -242,12 +242,11 @@ fi
 
 # some more ls aliases
 alias ll='ls -l'
-alias la='ls -A'
 alias l='ls -CF'
-# my custom aliases
-alias home="cd /home/"
-alias dcf="cd /home/dcfreak/"
-alias cls="clear"
+alias la='ls -al'
+alias dcf='cd ~/'
+alias cls='clear'
+
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -259,10 +258,6 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
-
 ICON="💀 "
 export STARSHIP_DISTRO="$ICON"
-
-# Load Starship
 eval "$(starship init zsh)"
-neofetch

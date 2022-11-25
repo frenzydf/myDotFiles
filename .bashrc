@@ -69,12 +69,12 @@ if [ "$color_prompt" = yes ]; then
 
     prompt_color='\[\033[;32m\]'
     info_color='\[\033[1;34m\]'
-    prompt_symbol=💀
+    prompt_symbol=㉿
     if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
         prompt_color='\[\033[;94m\]'
         info_color='\[\033[1;31m\]'
         # Skull emoji for root terminal
-        prompt_symbol=💀
+        #prompt_symbol=💀
     fi
     case "$PROMPT_ALTERNATIVE" in
         twoline)
@@ -131,10 +131,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-alias dcf='cd /home/dortega'
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -155,5 +154,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-#eval "$(starship init bash)"
 zsh
